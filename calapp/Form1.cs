@@ -11,6 +11,7 @@ namespace calapp
 {
     public partial class Form1 : Form
     {
+/// i need to do st with this game
         public Form1()
         {
             InitializeComponent();
