@@ -63,7 +63,7 @@ public class Ban {
         }
     }
 
-    public void Nhap(Scanner scanner) {
+    public int Nhap(Scanner scanner) {
         String hungNextline1 = scanner.nextLine();
         System.out.print("Mã Bàn: ");
         this.maBan = scanner.nextLine();
@@ -71,6 +71,7 @@ public class Ban {
         this.soBan = scanner.nextInt();
         System.out.print("Sức chứa: ");
         this.sucChua = scanner.nextInt();
+        return 0;
     }
 
     @Override

@@ -87,17 +87,21 @@ public class MenuChinh {
                     qlnv.themNhanVien(newnv);
                     break;
                 case 2:
-                    System.out.print("Nhập mã số nhân viên cần xóa: ");
-                    int xoa = scanner.nextInt();
+                    NhanVien NV= new NhanVien();
+                    NV.xoa();
+                    
                     break;
                 case 3:
-                    System.out.print("Nhập mã số nhân viên cần cập nhật: ");
+                   /* System.out.print("Nhập mã số nhân viên cần cập nhật: ");
                     int capnhat = scanner.nextInt();
                     for (NhanVien nv : qlnv.getDs()) {
                         if (nv.getMaNV() == capnhat) {
                             nv.capNhat(scanner);
                         }
-                    }
+                    }*/
+                    NhanVien nv= new NhanVien();
+                    nv.capNhat(scanner);
+                    
                     break;
                 case 4:
                     System.out.println("===Danh Sach Nhan Vien===");

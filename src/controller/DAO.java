@@ -20,12 +20,13 @@ public class DAO {
             + "databaseName=quanlycafe;";
     private static String USER_NAME = "sa";
     private static String PASSWORD = "123";
-    private Connection conn; 
+    private static Connection conn; 
     
-    public Connection ketNoi(){
+    public static Connection ketNoi(){
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            conn = DriverManager.getConnection(DB_URL, USER_NAME,PASSWORD);
+            conn = DriverManager.getConnection("jdbc:sqlserver://ADMIN\\SQLEXPRESS03:1433;"
+            + "databaseName=quanlycafe;", USER_NAME,PASSWORD);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -69,5 +70,9 @@ public class DAO {
             System.out.print("khong thanh cong"); 
         }
      }*/
+
+   
+
+    
 }
 

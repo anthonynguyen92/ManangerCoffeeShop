@@ -32,59 +32,6 @@ public class QuanLiNhanVien {
         this.getDs().add(nv);
     }
 
-    public void xoaNhanVien(NhanVien nv) {
-        DAO t = new DAO();
-        conn = t.ketNoi();
-        String sql = "DELETE FROM NhanVien where MaNv =" + nv.getMaNV();
-        try {
-            ptmt = conn.prepareStatement(sql);
-
-            int k = ptmt.executeUpdate();
-            if (k != 0) {
-                System.out.print("Xoa thanh cong");
-            } else {
-                System.out.print("Xoa khong thanh cong");
-            }
-            ptmt.close();
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        this.getDs().remove(nv);
-    }
-
-    public void capNhatNhanVien(int MaNV) throws ParseException, SQLException {
-        
-//        DAO t = new DAO();
-//        conn = t.ketNoi();
-//        for (NhanVien nv : this.getDs()) {
-//            if (nv.getMaNV() == MaNV) {
-//                System.out.print("Họ tên: ");
-//                nv.setHoTen(scanner.nextLine());
-//                System.out.print("Giới tính: ");
-//                nv.setGioiTinh(scanner.nextLine());
-//                System.out.print("Quê quán: ");
-//                nv.setQueQuan(scanner.nextLine());
-//                System.out.print("Ngày sinh: ");
-//                String ngaySinhTam = scanner.nextLine();
-//                nv.setNgaySinh(f.parse(ngaySinhTam));
-//                System.out.print("Ngày vào làm: ");
-//                String ngayVaoLamTam = scanner.nextLine();
-//                nv.setNgayVaoLam(f.parse(ngayVaoLamTam));;
-//                String sql = "UPDATE NhanVien set HoTen ='" + nv.getHoTen() + "',GioiTinh ='" + nv.getGioiTinh() + "',QueQuan ='" + nv.getQueQuan() + "' where MaNv =" + MaNV;
-//                try {
-//                    ptmt = conn.prepareStatement(sql);
-//
-//                    int k = ptmt.executeUpdate();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//        ptmt.close();
-//        conn.close();
-    }
-
     public QuanLiNhanVien traCuuNhanVien(String kw) throws ParseException {
         QuanLiNhanVien dctc = new QuanLiNhanVien();
         System.out.println("1.Theo họ tên.");

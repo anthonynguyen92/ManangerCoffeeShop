@@ -10,11 +10,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -56,7 +60,7 @@ public class NhanVien {
         this.ngayVaoLam = f.parse(ngayVaoLam);
         this.boPhan = bp;
         //this.boPhan.setTenBoPhan(bp);
-        DAO t = new DAO();
+       /* DAO t = new DAO();
         conn = t.ketNoi();
         String sql = "INSERT INTO dbo.NhanVien(MaNV,HoTen,GioiTinh,QueQuan,NgaySinh,NgayVaoLam) VALUES(?,?,?,?,?,?);";
         try {
@@ -78,14 +82,67 @@ public class NhanVien {
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
-    public void capNhat(Scanner scanner) throws ParseException{
+    public ResultSet getData(){
+        ResultSet rs=null;
+        String sqlCommand = "select *from NhanVien";
+        Statement st;
+        
+       try {
+           st=conn.createStatement();
+           rs=st.executeQuery(sqlCommand);
+       } catch (SQLException ex) {
+           Logger.getLogger(NhanVien.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       return rs;
+        
+    }
+    public void showData(ResultSet rs){
+       /* try{
+            while(rs.next()){
+               System.out.printf(%f,%10s,%20s,%30s,%+
+               +0
+               
+               );  
+            }
+           
+        }*/
+    }
+     public int xoa() {
+        DAO t = new DAO();
+        conn = t.ketNoi();
+        System.out.println("==== Nhập thông tin Cần Xóa ====");
+
+        System.out.print("Mã NV: ");
+        this.maNV=scanner.nextInt();
+        String sql = "DELETE FROM NhanVien where MaNv =?";
+        try {
+            ptmt = conn.prepareStatement(sql);
+             ptmt.setInt(1, this.getMaNV());
+            
+
+            int k = ptmt.executeUpdate();
+            if (k != 0) {
+                System.out.print("Xoa thanh cong");
+            } else {
+                System.out.print("Xoa khong thanh cong");
+            }
+            ptmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+        
+    }
+    public int capNhat(Scanner scanner) throws ParseException{
          DAO t = new DAO();
         conn = t.ketNoi();
         String ngaySinhTam;
         String ngayVaoLamTam;
         System.out.println("==== Nhập thông tin Cập Nhật ====");
+       
         String nextLine = scanner.nextLine();
         System.out.print("Họ tên: ");
         this.hoTen = scanner.nextLine();
@@ -93,25 +150,27 @@ public class NhanVien {
         this.gioiTinh = scanner.nextLine();
         System.out.print("Quê quán: ");
         this.queQuan = scanner.nextLine();
-         System.out.print("Ngày sinh: ");
+        System.out.print("Ngày sinh: ");
         ngaySinhTam = scanner.nextLine();
         this.ngaySinh = f.parse(ngaySinhTam);
         System.out.print("Ngày vào làm: ");
         ngayVaoLamTam = scanner.nextLine();
         this.ngayVaoLam = f.parse(ngayVaoLamTam);
+        System.out.print("Mã Nhân Viên: ");
+        this.maNV=scanner.nextInt();
 //        System.out.print("Bộ phận: ");
 //        this.boPhan.setTenBoPhan(scanner.nextLine());
-        String sql = "update dbo.NhanVien set MaNv = '"+this.getMaNV()+"';"
+        String sql ="UPDATE NhanVien set HoTen =? , GioiTinh = ?, QueQuan =? "  + " where MaNv =?" ; /*"update NhanVien set QueQuan = '"+this.getQueQuan()+"';"
                 + "HoTen = '"+this.getHoTen()+"';"
-                + "GioiTinh = '"+this.getGioiTinh()+"' where MaNv ='"+this.getMaNV()+"'";
+                + "GioiTinh = '"+this.getGioiTinh()+"' where MaNv ='"+this.getMaNV()+"'";*/
         try {
             ptmt = conn.prepareStatement(sql);   
-            ptmt.setInt(1, this.getMaNV());
-            ptmt.setString(2, this.getHoTen());
-            ptmt.setString(3, this.getGioiTinh());
-            ptmt.setString(4, this.getQueQuan());
-            ptmt.setDate(5, new java.sql.Date(this.getNgaySinh().getTime()));
-            ptmt.setDate(6, new java.sql.Date(this.getNgayVaoLam().getTime()));
+            ptmt.setString(1, this.getHoTen());
+            ptmt.setString(2, this.getGioiTinh());
+            ptmt.setString(3, this.getQueQuan());
+           // ptmt.setDate(4, new java.sql.Date(this.getNgaySinh().getTime()));
+            //ptmt.setDate(5, new java.sql.Date(this.getNgayVaoLam().getTime()));
+            ptmt.setInt(4, this.getMaNV());
             int k = ptmt.executeUpdate();
             if(k!=0){
                 System.out.print("Cập nhật thành công");
@@ -123,8 +182,10 @@ public class NhanVien {
         } catch (Exception e) {
             e.printStackTrace();
         }
+       return 0;
+        
     }
-    public void Nhap(Scanner scanner) throws ParseException {
+    public int Nhap(Scanner scanner) throws ParseException {
         DAO t = new DAO();
         conn = t.ketNoi();
         String ngaySinhTam;
@@ -169,6 +230,7 @@ public class NhanVien {
         } catch (Exception e) {
             e.printStackTrace();
         }
+       return 0;
     }
 
     @Override
@@ -241,6 +303,14 @@ public class NhanVien {
      */
     public void setBoPhan(String boPhan) {
         this.boPhan = boPhan;
+    }
+
+    public boolean Nhap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int xoa(int n) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
