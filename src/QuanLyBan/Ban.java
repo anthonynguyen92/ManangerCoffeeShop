@@ -71,6 +71,19 @@ public class Ban {
         }
     }
 
+<<<<<<< HEAD
+=======
+    public int Nhap(Scanner scanner) {
+        String hungNextline1 = scanner.nextLine();
+        System.out.print("Mã Bàn: ");
+        this.maBan = scanner.nextLine();
+        System.out.print("Số bàn: ");
+        this.soBan = scanner.nextInt();
+        System.out.print("Sức chứa: ");
+        this.sucChua = scanner.nextInt();
+        return 0;
+    }
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
 
     @Override
     public String toString() {

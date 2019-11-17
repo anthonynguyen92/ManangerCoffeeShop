@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Anh%20Tuan/Desktop/New%20folder/QuanLiCafe/CAFE/test/Testing.java</file>
+=======
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/controller/DAO.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/QuanLyNhanVien/QuanLiNhanVien.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/QuanLyNhanVien/NhanVien.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/QuanLyBan/QuanLiBan.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/QuanLyBan/Ban.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/dangnhap/MenuChinh.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/src/dangnhap/dangnhap.java</file>
+            <file>file:/C:/Users/Admin/Desktop/QuanLiCafe/CAFE/test/Testing.java</file>
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
         </group>
     </open-files>
 </project-private>

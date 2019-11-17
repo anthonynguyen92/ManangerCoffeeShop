@@ -6,6 +6,7 @@
 
 import java.util.List;
 import QuanLyNhanVien.NhanVien;
+<<<<<<< HEAD
 import QuanLyNhanVien.demo;
 import static com.sun.xml.internal.ws.encoding.policy.FastInfosetFeatureConfigurator.enabled;
 import controller.DAO;
@@ -15,19 +16,32 @@ import java.lang.reflect.Member;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
+=======
+import static com.sun.xml.internal.ws.encoding.policy.FastInfosetFeatureConfigurator.enabled;
+import controller.DAO;
+import dangnhap.dangnhap;
+import java.lang.reflect.Member;
+import java.sql.Connection;
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Scanner;
+=======
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import static org.junit.Assert.assertNotEquals;
+<<<<<<< HEAD
 import static org.junit.Assert.fail;
+=======
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -44,8 +58,12 @@ public class Testing {
     Connection conn= null;
     public static ResultSet rst;
     public static PreparedStatement ptmt = null;
+<<<<<<< HEAD
    
     /*public ArrayList<String> getAIDS(){
+=======
+    public ArrayList<String> getAIDS(){
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
         ArrayList<String> arr = new ArrayList<String>();
         try{
             String tmp;
@@ -60,7 +78,11 @@ public class Testing {
                 
         return arr;
          
+<<<<<<< HEAD
     }*/
+=======
+    }
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
     
      private int n;
     
@@ -92,6 +114,7 @@ public class Testing {
             Assert.assertNotNull(con);
             Assert.assertTrue(con.isValid(0));
             con.close();
+<<<<<<< HEAD
             System.out.print("Test Connect Thành công\n");
         
     }
@@ -162,17 +185,65 @@ public class Testing {
             
              
            org.junit.runner.Result result = JUnitCore.runClasses(Testing.class);
+=======
+            System.out.print("Test Thành công\n");
+        
+    }
+    @Test
+    public void testdangnhap() throws SQLException, ClassNotFoundException{
+        dangnhap dn = new dangnhap();
+        Testing test= new Testing();
+        
+        for(int i = 0; i < test.getAIDS().size();i++){
+            String[] tam =test.getAIDS().get(i).split("");
+            for (int j = 0; j < tam.length; j++){
+                assertNotEquals("sai user or password",null,dn.codeDangNhap(tam[0],tam[1]));
+           
+        
+         
+    }
+    
+        }      
+       
+    
+}
+    
+        
+          
+          
+          
+          
+        
+       
+       
+       
+        
+        
+ 
+       
+        
+        
+        
+    
+    public static void main(String[] args) {
+        {
+            org.junit.runner.Result result = JUnitCore.runClasses(Testing.class);
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
 
             if (!result.wasSuccessful()) {
                     result.getFailures().forEach((failure) -> {
                     System.err.println(failure);
+<<<<<<< HEAD
                     
+=======
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
                 });
             } else {
                 System.err.println("success");
             }
         }
     }
+<<<<<<< HEAD
 
     private String getUser() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -181,5 +252,7 @@ public class Testing {
     private String getPassWord() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+=======
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
     
 }

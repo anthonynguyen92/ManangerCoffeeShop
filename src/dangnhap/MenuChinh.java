@@ -103,8 +103,13 @@ public class MenuChinh {
                             nv.capNhat(scanner);
                         }
                     }*/
+<<<<<<< HEAD
                     
                     nv.capNhat();
+=======
+                    NhanVien nv= new NhanVien();
+                    nv.capNhat(scanner);
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
                     
                     break;
                 case 4:

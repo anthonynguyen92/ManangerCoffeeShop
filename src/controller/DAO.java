@@ -25,8 +25,13 @@ public class DAO {
     public static Connection ketNoi(){
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+<<<<<<< HEAD
             conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-OGC62EG\\SAS:1433;"
                         + "databaseName=quanlycafe;", USER_NAME,PASSWORD);
+=======
+            conn = DriverManager.getConnection("jdbc:sqlserver://ADMIN\\SQLEXPRESS03:1433;"
+            + "databaseName=quanlycafe;", USER_NAME,PASSWORD);
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
         } catch (Exception ex) {
             ex.printStackTrace();
         }
