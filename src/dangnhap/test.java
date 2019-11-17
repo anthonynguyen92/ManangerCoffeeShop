@@ -30,7 +30,7 @@ import sun.applet.Main;
  *
  * @author DELL
  */
-public class test {
+/*public class test {
 
     public static void menu(QuanLiNhanVien qlnv, QuanLiMon qlmon, QuanLiBan qlban,
             QuanLiDatBan qlDatBan, ThongKe ThongKe) throws ParseException, ClassNotFoundException {
@@ -357,4 +357,4 @@ public class test {
             Logger.getLogger(MenuChinh.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-}
+}*/

@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class MenuChinh {
 
-    public static void menu(QuanLiNhanVien qlnv, QuanLiMon qlmon, QuanLiBan qlban,
+    public void menu(QuanLiNhanVien qlnv, QuanLiMon qlmon, QuanLiBan qlban,
             QuanLiDatBan qlDatBan, ThongKe ThongKe) throws ParseException, ClassNotFoundException {
         Scanner scanner = new Scanner(System.in);
         int chon;
@@ -70,8 +70,12 @@ public class MenuChinh {
 
     public static void menuNhanVien(QuanLiNhanVien qlnv) throws ParseException, ClassNotFoundException {
         Scanner scanner = new Scanner(System.in);
-        int chon1;
+         NhanVien nv =new NhanVien();
+         int chon1 = 0;
         do {
+            if(nv.getMaNV()== 0  || nv.getHoTen()==null|| nv.getGioiTinh()==null){
+                
+            }else{
             System.out.println("---Chức Năng Nhân Viên---");
             System.out.println("1. Thêm Nhân Viên");
             System.out.println("2. Xóa Nhân Viên");
@@ -83,34 +87,43 @@ public class MenuChinh {
             switch (chon1) {
                 case 1:
                     NhanVien newnv = new NhanVien();
-                    newnv.Nhap(scanner);
+                    newnv.Nhap();
                     qlnv.themNhanVien(newnv);
                     break;
                 case 2:
-                    System.out.print("Nhập mã số nhân viên cần xóa: ");
-                    int xoa = scanner.nextInt();
+                    NhanVien NV= new NhanVien();
+                    NV.xoa();
+                    
                     break;
                 case 3:
-                    System.out.print("Nhập mã số nhân viên cần cập nhật: ");
+                   /* System.out.print("Nhập mã số nhân viên cần cập nhật: ");
                     int capnhat = scanner.nextInt();
                     for (NhanVien nv : qlnv.getDs()) {
                         if (nv.getMaNV() == capnhat) {
                             nv.capNhat(scanner);
                         }
-                    }
+                    }*/
+                    
+                    nv.capNhat();
+                    
                     break;
                 case 4:
                     System.out.println("===Danh Sach Nhan Vien===");
-                    System.out.println(qlnv);
+                    nv.ShowData();
                     break;
                 case 0:
                     break;
             }
-        } while (chon1 != 0);
+        } 
+        }while (chon1 != 0);
+                
+            
+           
+        
+  }
 
-    }
 
-    public static void menuMon(QuanLiMon qlmon) {
+    public static  void menuMon(QuanLiMon qlmon) {
         Scanner scanner = new Scanner(System.in);
         int chon2;
         do {
@@ -324,6 +337,12 @@ public class MenuChinh {
 
     }
 
+    //public static void close() {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   //}//
+
+  
+
     public String taaa() throws ClassNotFoundException {
         try {
             QuanLiNhanVien qlnv = new QuanLiNhanVien();
@@ -334,21 +353,21 @@ public class MenuChinh {
 //            NhanVien nv1 = new NhanVien("Kim Hai", "Nam", "Tp HCM", "28/02/1999", "27/05/2015", "Phuc vu");
 //            NhanVien nv2 = new NhanVien("Dai Loc", "Nam", "Cam Ranh", "01/01/1999", "19/04/2018", "Pha Che");
 //            NhanVien nv3 = new NhanVien("Quang Truong", "Nam", "Dak Lak", "22/05/1999", "13/07/2019", "Quan Li");
-            Mon mon1 = new ThucAn("Banh Mi", 15000, "Con ban", "Toi", "Co");
-            Mon mon2 = new DoUong("Nuoc suoi", 5000, "Con ban", "Sang", "Co");
-            Mon mon3 = new ThucAn("Banh Ngot", 7000, "Con ban", "Chieu", "Co");
-            Ban ban1 = new Ban(10);
-            Ban ban2 = new Ban(8);
-            Ban ban3 = new Ban(20);
-//            qlnv.themNhanVien(nv1);
-//            qlnv.themNhanVien(nv2);
-//            qlnv.themNhanVien(nv3);
-            qlmon.themMon(mon1);
-            qlmon.themMon(mon2);
-            qlmon.themMon(mon3);
-            qlban.themBan(ban1);
-            qlban.themBan(ban2);
-            qlban.themBan(ban3);
+//            Mon mon1 = new ThucAn("Banh Mi", 15000, "Con ban", "Toi", "Co");
+//            Mon mon2 = new DoUong("Nuoc suoi", 5000, "Con ban", "Sang", "Co");
+//            Mon mon3 = new ThucAn("Banh Ngot", 7000, "Con ban", "Chieu", "Co");
+//            Ban ban1 = new Ban(10);
+//            Ban ban2 = new Ban(8);
+//            Ban ban3 = new Ban(20);
+////            qlnv.themNhanVien(nv1);
+////            qlnv.themNhanVien(nv2);
+////            qlnv.themNhanVien(nv3);
+//            qlmon.themMon(mon1);
+//            qlmon.themMon(mon2);
+//            qlmon.themMon(mon3);
+//            qlban.themBan(ban1);
+//            qlban.themBan(ban2);
+//            qlban.themBan(ban3);
             menu(qlnv, qlmon, qlban, qlDatBan, thongKe);
         } catch (ParseException ex) {
             Logger.getLogger(MenuChinh.class.getName()).log(Level.SEVERE, null, ex);

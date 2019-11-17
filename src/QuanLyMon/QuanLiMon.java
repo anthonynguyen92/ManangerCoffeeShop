@@ -25,7 +25,7 @@ public class QuanLiMon {
         thucdon.add(mon);
     }
 
-    public void xoaMon(Mon mon) {
+    public int xoaMon(Mon mon) {
         DAO t = new DAO();
         conn = t.ketNoi();
         String sql = "DELETE FROM ThucDon where MaMon =" + mon.getMaMon();
@@ -44,6 +44,7 @@ public class QuanLiMon {
             e.printStackTrace();
         }
         thucdon.remove(mon);
+        return 0;
     }
 
     public QuanLiMon timKiemTheoTen(String kw) {
