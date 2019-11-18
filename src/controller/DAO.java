@@ -17,7 +17,11 @@ import java.util.ArrayList;
  
 public class DAO {
     private  String DB_URL = "jdbc:sqlserver://DESKTOP-OGC62EG\\SAS:1433;"
+<<<<<<< HEAD
             + "databaseName=quanlycafe;";
+=======
+                        + "databaseName=quanlycafe;";
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
     private static String USER_NAME = "sa";
     private static String PASSWORD = "123";
     private static Connection conn; 
@@ -25,8 +29,18 @@ public class DAO {
     public static Connection ketNoi(){
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+<<<<<<< HEAD
             conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-OGC62EG\\SAS:1433;"
             + "databaseName=quanlycafe;", USER_NAME,PASSWORD);
+=======
+<<<<<<< HEAD
+            conn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-OGC62EG\\SAS:1433;"
+                        + "databaseName=quanlycafe;", USER_NAME,PASSWORD);
+=======
+            conn = DriverManager.getConnection("jdbc:sqlserver://ADMIN\\SQLEXPRESS03:1433;"
+            + "databaseName=quanlycafe;", USER_NAME,PASSWORD);
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
         } catch (Exception ex) {
             ex.printStackTrace();
         }

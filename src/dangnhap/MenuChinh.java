@@ -103,8 +103,18 @@ public class MenuChinh {
                             nv.capNhat(scanner);
                         }
                     }*/
+<<<<<<< HEAD
                     
                     nv.capNhat();
+=======
+<<<<<<< HEAD
+                    
+                    nv.capNhat();
+=======
+                    NhanVien nv= new NhanVien();
+                    nv.capNhat(scanner);
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
                     
                     break;
                 case 4:
@@ -337,9 +347,15 @@ public class MenuChinh {
 
     }
 
+<<<<<<< HEAD
     public static void close() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+=======
+    //public static void close() {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   //}//
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
 
   
 
@@ -359,9 +375,15 @@ public class MenuChinh {
 //            Ban ban1 = new Ban(10);
 //            Ban ban2 = new Ban(8);
 //            Ban ban3 = new Ban(20);
+<<<<<<< HEAD
 //            qlnv.themNhanVien(nv1);
 //            qlnv.themNhanVien(nv2);
 //            qlnv.themNhanVien(nv3);
+=======
+////            qlnv.themNhanVien(nv1);
+////            qlnv.themNhanVien(nv2);
+////            qlnv.themNhanVien(nv3);
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
 //            qlmon.themMon(mon1);
 //            qlmon.themMon(mon2);
 //            qlmon.themMon(mon3);

@@ -35,27 +35,35 @@ public class Ban {
 
     ;
     public Ban(int sucChua) {
+        Scanner scanner = new Scanner(System.in);
+        String hungNextline1 = scanner.nextLine();
         this.maBan = String.format("B%03d", dem);
         this.soBan = dem;
         this.sucChua = sucChua;
         DAO t = new DAO();
         conn = t.ketNoi();
+          
+        System.out.print("Mã Bàn: ");
+        this.maBan = scanner.nextLine();
+        System.out.print("Số bàn: ");
+        this.soBan = scanner.nextInt();
+        System.out.print("Sức chứa: ");
+        this.sucChua = scanner.nextInt();
+        
         String sql = "INSERT INTO dbo.Ban(MaBan,SoBan,SucChua) VALUES(?,?,?);";
         try {
             ptmt = conn.prepareStatement(sql);
             ptmt.setString(1, this.getMaBan());
             ptmt.setInt(2, this.getSoBan());
             ptmt.setInt(3, this.getSucChua());
-            //ptmt.setString(4, this.getQueQuan());
-            //ptmt.setDate(5, new java.sql.Date(this.getNgaySinh().getTime()));
-            //ptmt.setDate(6, new java.sql.Date(this.getNgayVaoLam().getTime()));
+            
             
             int k = ptmt.executeUpdate();
-           /* if(k!=0){
+            if(k!=0){
                 System.out.print("Them thanh cong");
             }
             else
-                System.out.print("Them khong thanh cong"); */
+                System.out.print("Them khong thanh cong"); 
             ptmt.close();
             conn.close();
         } catch (Exception e) {
@@ -64,12 +72,26 @@ public class Ban {
        
            
     }
+<<<<<<< HEAD
     
     public void Nhap(Scanner scanner) {
         //String hungNextline1 = scanner.nextLine();
+=======
+
+<<<<<<< HEAD
+=======
+    public int Nhap(Scanner scanner) {
+        String hungNextline1 = scanner.nextLine();
+        System.out.print("Mã Bàn: ");
+        this.maBan = scanner.nextLine();
+        System.out.print("Số bàn: ");
+        this.soBan = scanner.nextInt();
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
         System.out.print("Sức chứa: ");
         this.sucChua = scanner.nextInt();
+        return 0;
     }
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
 
 
 

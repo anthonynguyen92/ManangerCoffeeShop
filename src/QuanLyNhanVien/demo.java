@@ -33,7 +33,11 @@ public String codeDangNhap() throws SQLException, ClassNotFoundException{
          
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 String url= "jdbc:sqlserver://DESKTOP-OGC62EG\\SAS:1433;"
+<<<<<<< HEAD
             + "databaseName=quanlycafe;";
+=======
+                        + "databaseName=quanlycafe;user=sa;password=123";
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
                 Connection conn = DriverManager.getConnection(url);
                 String sql = "SELECT * FROM Login where username=? and password=?";
             try{
@@ -59,7 +63,11 @@ public String codeDangNhap() throws SQLException, ClassNotFoundException{
 public String testthemNhanVien(){
         DAO t = new DAO();
         conn = t.ketNoi();
+<<<<<<< HEAD
         String sql = "INSERT INTO dbo.NhanVien(MaNV,HoTen,GioiTinh,QueQuan,NgaySinh,NgayVaoLam) VALUES(2,'an','nam','dl','12/12/2012','01/12/2011');";
+=======
+        String sql = "INSERT INTO dbo.NhanVien(MaNV,HoTen,GioiTinh,QueQuan,NgaySinh,NgayVaoLam) VALUES(3,'an','nam','dl','12/12/2012','01/12/2011');";
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
         try {
             ptmt = conn.prepareStatement(sql);
             //ptmt.executeUpdate(sql);
@@ -96,7 +104,11 @@ public String capNhatNhanVien() throws ParseException{
         String ngayVaoLamTam;
        
 
+<<<<<<< HEAD
         String sql ="UPDATE NhanVien set HoTen ='linh' , GioiTinh = 'nu', QueQuan ='hcm' "  + " where MaNv =2" ; /*"update NhanVien set QueQuan = '"+this.getQueQuan()+"';"
+=======
+        String sql ="UPDATE NhanVien set HoTen = 'Nam' , GioiTinh = 'nam', QueQuan ='dl' "  + " where MaNv =1" ; /*"update NhanVien set QueQuan = '"+this.getQueQuan()+"';"
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
                 + "HoTen = '"+this.getHoTen()+"';"
                 + "GioiTinh = '"+this.getGioiTinh()+"' where MaNv ='"+this.getMaNV()+"'";*/
         try {

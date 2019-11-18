@@ -85,6 +85,10 @@ public class NhanVien {
             e.printStackTrace();
         }*/
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
     public int ShowData(){
         DAO t = new DAO();
         conn = t.ketNoi();
@@ -110,6 +114,36 @@ public class NhanVien {
         
     }
     
+<<<<<<< HEAD
+=======
+=======
+    public ResultSet getData(){
+        ResultSet rs=null;
+        String sqlCommand = "select *from NhanVien";
+        Statement st;
+        
+       try {
+           st=conn.createStatement();
+           rs=st.executeQuery(sqlCommand);
+       } catch (SQLException ex) {
+           Logger.getLogger(NhanVien.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       return rs;
+        
+    }
+    public void showData(ResultSet rs){
+       /* try{
+            while(rs.next()){
+               System.out.printf(%f,%10s,%20s,%30s,%+
+               +0
+               
+               );  
+            }
+           
+        }*/
+    }
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
      public int xoa() {
         DAO t = new DAO();
         conn = t.ketNoi();
@@ -119,7 +153,15 @@ public class NhanVien {
         this.maNV=scanner.nextInt();
         String sql = "DELETE FROM NhanVien where MaNv =?";
         try {
+<<<<<<< HEAD
              ptmt = conn.prepareStatement(sql);
+=======
+<<<<<<< HEAD
+             ptmt = conn.prepareStatement(sql);
+=======
+            ptmt = conn.prepareStatement(sql);
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
              ptmt.setInt(1, this.getMaNV());
             
 
@@ -137,7 +179,15 @@ public class NhanVien {
         return 0;
         
     }
+<<<<<<< HEAD
     public int capNhat() throws ParseException{
+=======
+<<<<<<< HEAD
+    public int capNhat() throws ParseException{
+=======
+    public int capNhat(Scanner scanner) throws ParseException{
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
          DAO t = new DAO();
         conn = t.ketNoi();
         String ngaySinhTam;
@@ -186,7 +236,15 @@ public class NhanVien {
        return 0;
         
     }
+<<<<<<< HEAD
     public String Nhap() throws ParseException {
+=======
+<<<<<<< HEAD
+    public String Nhap() throws ParseException {
+=======
+    public int Nhap(Scanner scanner) throws ParseException {
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
         DAO t = new DAO();
         conn = t.ketNoi();
         String ngaySinhTam;
@@ -234,7 +292,15 @@ public class NhanVien {
         } catch (Exception e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
        return sql;
+=======
+<<<<<<< HEAD
+       return sql;
+=======
+       return 0;
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
     }
    
     
@@ -310,7 +376,17 @@ public class NhanVien {
         this.boPhan = boPhan;
     }
 
+<<<<<<< HEAD
    
+=======
+<<<<<<< HEAD
+   
+=======
+    public boolean Nhap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+>>>>>>> 6ee39a48a58289ea2f1e4b28911c9f72b024d7c0
+>>>>>>> d5106294992485f0ae5360b5f928989a4ada8548
 
     public int xoa(int n) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
