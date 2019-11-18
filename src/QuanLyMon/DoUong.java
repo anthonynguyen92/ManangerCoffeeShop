@@ -59,6 +59,7 @@ public class DoUong extends Mon {
         } catch (Exception e) {
             e.printStackTrace();
         }
+       
     }
 
     @Override

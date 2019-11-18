@@ -15,8 +15,9 @@ import java.util.Scanner;
  * @author DELL
  */
 public class Ban {
-    Connection conn= null;
+     Connection conn= null;
    private PreparedStatement ptmt = null;
+
 
     private int soBan;
     private String maBan;
@@ -37,7 +38,6 @@ public class Ban {
         this.maBan = String.format("B%03d", dem);
         this.soBan = dem;
         this.sucChua = sucChua;
-        
         DAO t = new DAO();
         conn = t.ketNoi();
         String sql = "INSERT INTO dbo.Ban(MaBan,SoBan,SucChua) VALUES(?,?,?);";
@@ -61,17 +61,17 @@ public class Ban {
         } catch (Exception e) {
             e.printStackTrace();
         }
+       
+           
     }
-
+    
     public void Nhap(Scanner scanner) {
-        String hungNextline1 = scanner.nextLine();
-        System.out.print("Mã Bàn: ");
-        this.maBan = scanner.nextLine();
-        System.out.print("Số bàn: ");
-        this.soBan = scanner.nextInt();
+        //String hungNextline1 = scanner.nextLine();
         System.out.print("Sức chứa: ");
         this.sucChua = scanner.nextInt();
     }
+
+
 
     @Override
     public String toString() {
